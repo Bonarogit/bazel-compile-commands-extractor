@@ -66,7 +66,7 @@ def refresh_compile_commands(
         **kwargs):  # For the other common attributes. Tags, compatible_with, etc. https://docs.bazel.build/versions/main/be/common-definitions.html#common-attributes.
     # Convert the various, acceptable target shorthands into the dictionary format
     if not targets:  # Default to all targets in main workspace
-        targets = {"@//...": ""}
+        targets = {"@//tensorflow/tools/pip_package:build_pip_package": ""}
     elif type(targets) == "list":  # Allow specifying a list of targets w/o arguments
         targets = {target: "" for target in targets}
     elif type(targets) != "dict":  # Assume they've supplied a single string/label and wrap it
